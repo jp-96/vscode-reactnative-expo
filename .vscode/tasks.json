@@ -13,10 +13,6 @@
                 "staging",
             ],
             "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
         },
         {
             "label": "expo: publish:history",
@@ -39,21 +35,48 @@
             "problemMatcher": [],
         },
         {
-            "label": "yarn: install",
+            "label": "eas: build:configure",
             "type": "shell",
-            "command": "yarn",
+            "command": "eas",
+            "args": [
+                "build:configure",
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+            },
+        },
+        {
+            "label": "eas: build:android (local)",
+            "type": "shell",
+            "command": "eas",
+            "args": [
+                "build",
+                "--platform",
+                "android",
+                "--profile",
+                "development",
+                "--local",
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "npm install",
+            "type": "shell",
+            "command": "npm",
             "args": [
                 "install",
-                "--immutable",
-                "--immutable-cache",
-                "--check-cache",
             ],
             "problemMatcher": [],
         },
         {
             "label": "npm-check-updates",
             "type": "shell",
-            "command": "yarn global add npm-check-updates && npm-check-updates -u",
+            "command": "npm install npm-check-updates && npm-check-updates -u",
             "problemMatcher": [],
         },
     ],
